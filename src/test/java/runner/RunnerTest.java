@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"src/test/resources/feature"},
         glue = {"stepDefinition"},
-        tags = {"@HappyPath","@Tag01"}
+        tags = {"@Id01"}
 )
 
 public class RunnerTest {
