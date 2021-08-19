@@ -9,17 +9,17 @@ import org.junit.Assert;
 import org.openqa.selenium.chrome.ChromeDriver;
 import page.GooglePage;
 
+import static parameters.Parameters.*;
 import java.io.IOException;
 
 public class GoogleStepDefinition {
 
     GooglePage googlePage = new GooglePage();
-    String pathBase = System.getProperty("user.dir");
-    String pathDriver = pathBase + "\\src\\test\\resources\\driver\\chromedriver.exe";
+
 
     @Given("^carga la pagina web de google$")
     public void cargaLaPaginaWebDeGoogle() {
-        System.setProperty("webdriver.chrome.driver", pathDriver);
+        System.setProperty("webdriver.chrome.driver", filePath);
         googlePage.driver = new ChromeDriver();
         googlePage.driver.manage().window().maximize();
         googlePage.driver.get("http://google.com/");
@@ -40,7 +40,7 @@ public class GoogleStepDefinition {
 
     @Given("^carga la pagina web de AirPort$")
     public void cargaLaPaginaWebDeAirPort() {
-        System.setProperty("webdriver.chrome.driver", pathDriver);
+        System.setProperty("webdriver.chrome.driver", filePath);
         googlePage.driver = new ChromeDriver();
         googlePage.driver.manage().window().maximize();
         googlePage.driver.get("https://www.rentalcars.com/us/airport-rentals/\n");
