@@ -1,12 +1,15 @@
 package stepDefinition;
 
 import cucumber.api.PendingException;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.chrome.ChromeDriver;
 import page.GooglePage;
+
+import java.io.IOException;
 
 public class GoogleStepDefinition {
 
@@ -46,5 +49,16 @@ public class GoogleStepDefinition {
     @When("^seleciona el pais \"([^\"]*)\"$")
     public void selecionaElPais(String sPais) throws Throwable {
         googlePage.seleccionarPais(sPais);
+    }
+
+    @When("^seleciona pais$")
+    public void selecionaPais() throws IOException {
+        googlePage.seleccionarPaisExcel();
+
+    }
+
+    @And("^Obtengo la información de sus ciudades$")
+    public void obtengoLaInformaciónDeSusCiudades() throws IOException {
+        googlePage.obtenerCiudades();
     }
 }

@@ -34,6 +34,14 @@ Feature: Buscar informacion en google
       | sPais |
       | Peru  |
 
+  @Id04
+  Scenario: Seleccioar pais - Excel
+    Given carga la pagina web de AirPort
+    When seleciona pais
+    And Obtengo la información de sus ciudades
+
+
+
   @Google @ID02 @HappyPath
   Scenario: buscar informacion de selenium09
     Given carga la pagina web de google
