@@ -3,14 +3,14 @@
 
 Feature: A description
 
-  @Id03
-  Scenario Outline: buscar informacion
-    Given carga la pagina web de google _01
-    When ingresa el texto "<sTexto>" a buscar _01
-    Then la aplicacion web de google realiza la busqueda del texto "<sTexto>" _01
+  @Id20
+  Scenario Outline: buscar informacion por ambiente
+    Given carga la pagina web de google _web
+    When ingresa el texto "<sTexto>" a buscar _web
+    Then la aplicacion web de google realiza la busqueda del texto "<sTexto>" _web
     Examples:
       | sTexto   |
       | selenium |
-      | cucumber |
-      | java     |
-      | facebook |
+      #| cucumber |
+      #| java     |
+      #| facebook |

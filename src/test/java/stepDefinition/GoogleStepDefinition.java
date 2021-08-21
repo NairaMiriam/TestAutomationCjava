@@ -1,25 +1,30 @@
 package stepDefinition;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import net.serenitybdd.core.environment.EnvironmentSpecificConfiguration;
+import net.thucydides.core.util.EnvironmentVariables;
 import org.junit.Assert;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.springframework.beans.factory.annotation.Autowired;
 import page.GooglePage;
 
 import static parameters.Parameters.*;
+
 import java.io.IOException;
 
 public class GoogleStepDefinition {
 
-    GooglePage googlePage = new GooglePage();
+    @Autowired
+    GooglePage googlePage;
 
+    private EnvironmentVariables env;
 
     @Given("^carga la pagina web de google$")
     public void cargaLaPaginaWebDeGoogle() {
-        System.setProperty("webdriver.chrome.driver", filePath);
+        System.setProperty("webdriver.chrome.driver", filePathChrome);
         googlePage.driver = new ChromeDriver();
         googlePage.driver.manage().window().maximize();
         googlePage.driver.get("http://google.com/");
@@ -27,6 +32,8 @@ public class GoogleStepDefinition {
 
     @When("^ingresa el texto \"([^\"]*)\" a buscar$")
     public void ingresaElTextoABuscar(String arg0) throws Throwable {
+
+
         googlePage.ingresarTexto(arg0);
     }
 
@@ -40,7 +47,7 @@ public class GoogleStepDefinition {
 
     @Given("^carga la pagina web de AirPort$")
     public void cargaLaPaginaWebDeAirPort() {
-        System.setProperty("webdriver.chrome.driver", filePath);
+        System.setProperty("webdriver.chrome.driver", filePathChrome);
         googlePage.driver = new ChromeDriver();
         googlePage.driver.manage().window().maximize();
         googlePage.driver.get("https://www.rentalcars.com/us/airport-rentals/\n");

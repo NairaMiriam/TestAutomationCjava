@@ -25,6 +25,7 @@ public class GooglePage {
         txtBuscar.clear();
         txtBuscar.sendKeys(sTexto);
         txtBuscar.submit();
+
     }
 
     public boolean validarTexto(String sTexto) {
@@ -72,7 +73,7 @@ public class GooglePage {
     public void obtenerCiudades() throws IOException {
         String ciudadObtenida = "";
         WebElement ciudad = driver.findElement(By.xpath("//select[@id='pu-city']"));
-        waitElementVisible(ciudad,10);
+        waitElementVisible(ciudad, 10);
         System.out.println(ciudad.getText());
         List<WebElement> listCiudad = driver.findElements(By.xpath("//option"));
         System.out.println(listCiudad.size());

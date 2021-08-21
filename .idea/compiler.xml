@@ -7,8 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="testAutomationCjava" />
-        <module name="TestAutomationCjava" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="testAutomationCjava" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -29,7 +29,6 @@ Feature: Buscar informacion en google
   Scenario Outline: Seleccioar pais
     Given carga la pagina web de AirPort
     When seleciona el pais "<sPais>"
-    #Then la aplicacion web de google realiza la busqueda del texto "selenium"
     Examples:
       | sPais |
       | Peru  |

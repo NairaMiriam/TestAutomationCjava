@@ -15,7 +15,7 @@ public class TestEdu {
     String pathBase = System.getProperty("user.dir");
     String pathDriver = pathBase + "\\src\\test\\resources\\driver\\chromedriver.exe";
 
-    @Before
+    //@Before
     public void invocarNavegador() {
         System.setProperty("webdriver.chrome.driver", pathDriver);
         driver = new ChromeDriver();
@@ -26,7 +26,7 @@ public class TestEdu {
         System.out.println(tituloWeb + "\n");
     }
 
-    @Test
+    //@Test
     public void buscarCurso(){
         WebElement txtEnterBuscar=driver.findElement(By.className("open_search_overlay"));
         WebElement txtEnterXpath=driver.findElement(By.xpath("//div[@class='search_header']/input"));
@@ -36,7 +36,7 @@ public class TestEdu {
         txtCurso.sendKeys("Java");
         txtCurso.sendKeys(Keys.ENTER);
     }
-    @After
+  //  @After
     public void affter(){
         driver.close();
         //driver.quit();
